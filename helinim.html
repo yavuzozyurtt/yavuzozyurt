@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sana Bir Mesajım Var ❤️</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffeef2;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Zarfın Tabanı */
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #f03e3e;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* Zarfın Ön Kapakları */
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            border-top: 100px solid transparent;
+            border-left: 150px solid #fa5252;
+            border-right: 150px solid #fa5252;
+            border-bottom: 100px solid #fa5252;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Zarfın Üst Kapağı */
+        .envelope::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            z-index: 3;
+            border-top: 130px solid #e03131;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            transform-origin: top;
+            transition: transform 0.4s ease;
+        }
+
+        /* Mektup Kağıdı */
+        .letter {
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            width: 280px;
+            height: 180px;
+            background: white;
+            z-index: 1;
+            transition: transform 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .letter h2 {
+            color: #d00000;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .letter p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Açılma Animasyonu */
+        .envelope-wrapper:hover .envelope::after {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+
+        .envelope-wrapper:hover .letter {
+            transform: translateY(-100px);
+            z-index: 2;
+        }
+
+        /* Küçük Kalp Süslemesi */
+        .heart-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 30px;
+            color: white;
+            transition: opacity 0.3s;
+        }
+
+        .envelope-wrapper:hover .heart-icon {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="envelope-wrapper">
+        <div class="heart-icon">❤️</div>
+        <div class="envelope"></div>
+        <div class="letter">
+            <h2>Sevgililer Günün Kutlu Olsun!</h2>
+            <p>Hayatımı güzelleştirdiğin her an için teşekkür ederim. <br> Seni çok seviyorum! ❤️</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
